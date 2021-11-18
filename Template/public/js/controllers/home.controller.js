@@ -12,6 +12,11 @@
         vm.cidadesPage = cidadesPage;
         vm.estadosPage = estadosPage;
         vm.investimentosPage = investimentosPage;
+        vm.rendasPage = rendasPage;
+        vm.resumosPage = resumosPage;
+        vm.gastosPage = gastosPage;
+        vm.usuariosPage = usuariosPage;
+        
 
         activate();
 
@@ -28,6 +33,22 @@
 
         function investimentosPage() {
             $location.path("/investimento");
+        }
+
+        function gastosPage() {
+            $location.path("/gasto");
+        }
+
+        function rendasPage() {
+            $location.path("/renda");
+        }
+
+        function resumosPage() {
+            $location.path("/resumo");
+        }
+
+        function usuariosPage() {
+            $location.path("/usuario");
         }
     }
 })();
