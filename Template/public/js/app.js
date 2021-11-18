@@ -37,6 +37,42 @@ angular
             .when("/investimento/new", {
                 templateUrl: "partials/investimento-form.html",
             })
+            .when("/gasto", {
+                templateUrl: "partials/gasto.html",
+            })
+            .when("/gasto/:id", {
+                templateUrl: "partials/gasto-form.html",
+            })
+            .when("/gasto/new", {
+                templateUrl: "partials/gasto-form.html",
+            })
+            .when("/renda", {
+                templateUrl: "partials/renda.html",
+            })
+            .when("/renda/:id", {
+                templateUrl: "partials/renda-form.html",
+            })
+            .when("/renda/new", {
+                templateUrl: "partials/renda-form.html",
+            })
+            .when("/usuario", {
+                templateUrl: "partials/usuario.html",
+            })
+            .when("/usuario/:id", {
+                templateUrl: "partials/usuario-form.html",
+            })
+            .when("/usuario/new", {
+                templateUrl: "partials/usuario-form.html",
+            })
+            .when("/resumo", {
+                templateUrl: "partials/resumo.html",
+            })
+            .when("/resumo/:id", {
+                templateUrl: "partials/resumo-form.html",
+            })
+            .when("/resumo/new", {
+                templateUrl: "partials/resumo-form.html",
+            })
             .otherwise({
                 templateUrl: "partials/404.html",
             });
