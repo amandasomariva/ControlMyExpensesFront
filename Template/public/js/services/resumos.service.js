@@ -3,11 +3,11 @@
 
     angular
         .module('MyApp')
-        .factory('EstadoService', EstadoService);
+        .factory('ResumoService', ResumoService);
 
-    EstadoService.$inject = ['$http', '$window', '$rootScope'];
+    ResumoService.$inject = ['$http', '$window', '$rootScope'];
 
-    function EstadoService($http, $window, $rootScope) {
+    function ResumoService($http, $window, $rootScope) {
         var service = {
             find: find,
             findById: findById,
@@ -15,7 +15,7 @@
             remove: remove
         };
 
-        var URL = 'http://localhost:8080/api/estados';
+        var URL = 'http://localhost:8080/api/resumos';
 
         return service;
 

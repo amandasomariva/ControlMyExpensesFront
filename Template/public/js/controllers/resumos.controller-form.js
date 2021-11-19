@@ -3,23 +3,23 @@
 
     angular
         .module("MyApp")
-        .controller("EstadoFormController", EstadoFormController);
+        .controller("ResumoFormController", ResumoFormController);
 
-    EstadoFormController.$inject = [
-        "EstadoService",
+    ResumoFormController.$inject = [
+        "ResumoService",
         "$location",
         "$routeParams",
         "$scope",
     ];
 
-    function EstadoFormController(
-        EstadoService,
+    function ResumoFormController(
+        ResumoService,
         $location,
         $routeParams
     ) {
         var vm = this;
         vm.cadastro = {};
-        vm.titulo = "Novo Estado";
+        vm.titulo = "Novo Resumo";
         vm.item = null;
         vm.salvar = salvar;
 
@@ -29,21 +29,23 @@
             if ($routeParams.id) {
                 EstadoService.findById($routeParams.id).success(function (data) {
                     vm.cadastro = data;
-                    vm.titulo = "Editando Estado";
+                    vm.titulo = "Editando o Resumo";
                 });
             }
         }
 
         function salvar() {
             EstadoService.save(vm.cadastro).success(function () {
-                $location.path("/estado");
-                alert("Estado cadastrada com sucesso!!");
+                $location.path("/resumo");
+                alert("Resumo cadastrado com sucesso!!");
             }).error(function (erro) {
                 alert(JSON.stringify(erro));
             });
         }
 
-    
+    function select(valor){
+        return '"'+valor+'"';
+    }
 
     }
 })();

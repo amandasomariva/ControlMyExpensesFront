@@ -23,14 +23,19 @@
                             <thead>
                                 <tr>
                                     <th>NOME</th>
-                                    <th>POLULAÇÃO</th>
-                                    <th>AÇÕES</th>
+                                    <th>DATA DE NASCIMENTO</th>
+                                    <th>SEXO</th>
+                                    <th>CPF</th>
+                                    <th>EMAIL</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
                                     <td>{{item.nome}}</td>
-                                    <td>{{item.populacao}}</td>
+                                    <td>{{item.dataNascimento}}</td>
+                                    <td>{{item.sexo}}</td>
+                                    <td>{{item.cpf}}</td>
+                                    <td>{{item.email}}</td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/usuario/' + item.id}}">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

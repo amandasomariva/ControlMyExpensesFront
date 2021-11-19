@@ -1,4 +1,4 @@
-<div ng-controller="EstadoListController as vm">
+<div ng-controller="RendaListController as vm">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -6,12 +6,12 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h3>Cadastro de Estados </h3>
+                                <h3>Cadastro de Entradas </h3>
                             </div>
                             <div class="col-sm-4">
-                                <a class="btn btn-default pull-right btn-lg" href="estado/new">
+                                <a class="btn btn-default pull-right btn-lg" href="renda/new">
                                     <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                                    <span>Novo Estado</span>
+                                    <span>Nova Entrada</span>
                                 </a>
                             </div>
                         </div>
@@ -22,22 +22,23 @@
                         <table class="table" style="margin-top: 3em">
                             <thead>
                                 <tr>
-                                    <th>NOME</th>
-                                    <th>POLULAÇÃO</th>
-                                    <th>AÇÕES</th>
+                                    <th>ENTRADA</th>
+                                    <th>DATA ENTRADA</th>
+                                    <th>VALOR</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
-                                    <td>{{item.nome}}</td>
-                                    <td>{{item.populacao}}</td>
+                                    <td>{{item.entrada}}</td>
+                                    <td>{{item.dataEntrada}}</td>
+                                    <td>{{item.valor}}</td>
                                     <td>
-                                        <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/estado/' + item.id}}">
+                                        <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/renda/' + item.id}}">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </a>
 
                                         <a type="button" class="btn btn-primary btn-sm" confirmed-click="vm.remover(item)" 
-                                        ng-confirm-click="Deseja excluir o estado?">
+                                        ng-confirm-click="Deseja excluir a entrada?">
                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                                         </a>
                                     </td>

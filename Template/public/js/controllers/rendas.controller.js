@@ -3,11 +3,11 @@
 
     angular
         .module("MyApp")
-        .controller("EstadoListController", EstadoListController);
+        .controller("RendaListController", RendaListController);
 
-    EstadoListController.$inject = ["EstadoService"];
+    RendaListController.$inject = ["RendaService"];
 
-    function EstadoListController(EstadoService) {
+    function RendaListController(RendaService) {
         var vm = this;
 
         vm.item = null;
@@ -20,13 +20,13 @@
 
         function activate() {
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
-            EstadoService.find(query).then(function(result) {
+            RendaService.find(query).then(function(result) {
                 vm.itens = result.data;
             });
         }
 
         function remover(item) {
-            EstadoService.remove(item.id).success(function() {
+            RendaService.remove(item.id).success(function() {
                 activate();
             });
         }

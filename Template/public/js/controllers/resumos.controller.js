@@ -1,34 +1,15 @@
-(function() {
-    "use strict";
+var listaController = angular.module('resumoControllerApp', []);
+ 
+listaController.controller('ResumoControllerCtrl', ['$scope', function($scope) {
+    var vm = this;
 
-    angular
-        .module("MyApp")
-        .controller("EstadoListController", EstadoListController);
-
-    EstadoListController.$inject = ["EstadoService"];
-
-    function EstadoListController(EstadoService) {
-        var vm = this;
-
-        vm.item = null;
-        vm.itens = [];
-        vm.busca = "";
-        vm.remover = remover;
-        vm.buscar = activate;
-
-        activate();
-
-        function activate() {
-            var query = vm.busca ? { $text: { $search: vm.busca } } : {};
-            EstadoService.find(query).then(function(result) {
-                vm.itens = result.data;
-            });
-        }
-
-        function remover(item) {
-            EstadoService.remove(item.id).success(function() {
-                activate();
-            });
-        }
-    }
-})();
+    vm.atualizar = function() {
+        $scope.operacoes = [
+            {nome: 'Soma', resultado: Number(vm.primeiroNumero) + Number(vm.segundoNumero)},
+            {nome: 'Subtração', resultado: vm.primeiroNumero - vm.segundoNumero},
+            {nome: 'Multiplicação', resultado: vm.primeiroNumero * vm.segundoNumero},
+            {nome: 'Divisão', resultado: vm.primeiroNumero / vm.segundoNumero},
+            {nome: 'Percentual', resultado: (Number(vm.primeiroNumero) + Number(vm.segundoNumero)) * 0.001 }
+        ];
+      };
+}]);
