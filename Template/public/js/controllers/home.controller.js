@@ -9,27 +9,23 @@
         var vm = this;
         var itemSelecionado = -1;
 
-        vm.cidadesPage = cidadesPage;
-        vm.estadosPage = estadosPage;
+        
+        
         vm.investimentosPage = investimentosPage;
         vm.rendasPage = rendasPage;
         vm.resumosPage = resumosPage;
         vm.gastosPage = gastosPage;
         vm.usuariosPage = usuariosPage;
+        vm.isAdministrador = isAdministrador;
         
 
         activate();
 
-        function activate() {
-        }
+         }
 
-        function cidadesPage() {
-            $location.path("/cidade");
-        }
-
-        function estadosPage() {
-            $location.path("/estado");
-        }
+        function isAdministrador (){
+            return $window.localStorage.administrador;
+        };
 
         function investimentosPage() {
             $location.path("/investimento");

@@ -19,7 +19,7 @@
     ) {
         var vm = this;
         vm.cadastro = {};
-        vm.titulo = "Novo Usuario";
+        vm.titulo = "Novo Usuário";
         vm.item = null;
         vm.salvar = salvar;
         vm.select = select;
@@ -28,17 +28,17 @@
 
         function activate() {
             if ($routeParams.id) {
-                InvestimentoService.findById($routeParams.id).success(function (data) {
+                UsuarioService.findById($routeParams.id).success(function (data) {
                     vm.cadastro = data;
-                    vm.titulo = "Editando Usuario";
+                    vm.titulo = "Editando Usuário";
                 });
             }
         }
 
         function salvar() {
-            InvestimentoService.save(vm.cadastro).success(function () {
+            UsuarioService.save(vm.cadastro).success(function () {
                 $location.path("/Usuario");
-                alert("Usuario cadastrado com sucesso!!");
+                alert("Usuário cadastrado com sucesso!!");
             }).error(function (erro) {
                 alert(JSON.stringify(erro));
             });

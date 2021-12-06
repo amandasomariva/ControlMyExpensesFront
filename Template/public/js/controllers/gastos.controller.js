@@ -20,13 +20,13 @@
 
         function activate() {
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
-            EstadoService.find(query).then(function(result) {
+            GastoService.find(query).then(function(result) {
                 vm.itens = result.data;
             });
         }
 
         function remover(item) {
-            EstadoService.remove(item.id).success(function() {
+            GastoService.remove(item.id).success(function() {
                 activate();
             });
         }

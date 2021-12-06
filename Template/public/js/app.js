@@ -5,28 +5,19 @@ angular
 
         $routeProvider
             .when("/", {
+                templateUrl: "partials/login.html",
+                controller:"LoginCtrl"
+            })
+            .when("/login", {
+                templateUrl: "partials/login.html",
+                controller:"LoginCtrl"
+            })
+            .when("/", {
                 templateUrl: "partials/home.html",
             })
             .when("/home", {
                 templateUrl: "partials/home.html",
-            })
-            .when("/cidade", {
-                templateUrl: "partials/cidade.html",
-            })
-            .when("/cidade/:id", {
-                templateUrl: "partials/cidade-form.html",
-            })
-            .when("/cidade/new", {
-                templateUrl: "partials/cidade-form.html",
-            })
-            .when("/estado", {
-                templateUrl: "partials/estado.html",
-            })
-            .when("/estado/:id", {
-                templateUrl: "partials/estado-form.html",
-            })
-            .when("/estado/new", {
-                templateUrl: "partials/estado-form.html",
+            
             })
             .when("/investimento", {
                 templateUrl: "partials/investimento.html",

@@ -27,7 +27,7 @@
 
         function activate() {
             if ($routeParams.id) {
-                EstadoService.findById($routeParams.id).success(function (data) {
+                ResumoService.findById($routeParams.id).success(function (data) {
                     vm.cadastro = data;
                     vm.titulo = "Editando o Resumo";
                 });
@@ -35,7 +35,7 @@
         }
 
         function salvar() {
-            EstadoService.save(vm.cadastro).success(function () {
+            ResumoService.save(vm.cadastro).success(function () {
                 $location.path("/resumo");
                 alert("Resumo cadastrado com sucesso!!");
             }).error(function (erro) {

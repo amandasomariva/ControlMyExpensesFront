@@ -35,7 +35,7 @@
         }
 
         function salvar() {
-            EstadoService.save(vm.cadastro).success(function () {
+            GastoService.save(vm.cadastro).success(function () {
                 $location.path("/gasto");
                 alert("Despesa cadastrada com sucesso!!");
             }).error(function (erro) {

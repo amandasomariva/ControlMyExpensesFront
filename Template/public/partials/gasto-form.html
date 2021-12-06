@@ -8,31 +8,31 @@
                         <br>
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label for="nome" class="col-sm-2">Descrição</label>
+                                <label for="descricao" class="col-sm-2">Descrição</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control text-left" ng-model="vm.cadastro.descricao" id="descricao">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="populacao" class="col-sm-2">Data da Compra</label>
+                                <label for="dataCompra" class="col-sm-2">Data da Compra</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control text-left" ng-model="vm.cadastro.dataCompra" id="dataCompra">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="populacao" class="col-sm-2">Data do Vencimento</label>
+                                <label for="dataVencimento" class="col-sm-2">Data do Vencimento</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control text-left" ng-model="vm.cadastro.dataVencimento" id="dataVencimento">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="populacao" class="col-sm-2">Valor</label>
+                                <label for="valor" class="col-sm-2">Valor</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control text-left" ng-model="vm.cadastro.valor" id="valor">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="populacao" class="col-sm-2">Modalidade de Pagamento</label>
+                                <label for="modalidadePagamento" class="col-sm-2">Modalidade de Pagamento</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control text-left" ng-model="vm.cadastro.pagamento" id="pagamento">
                                 </div>
@@ -56,7 +56,7 @@
                                         <option value="TRASFERENCIA">Transferência</option>
                                     </select>
                                     <div class="form-group">
-                                <label for="populacao" class="col-sm-2">Modalidade de despesas</label>
+                                <label for="modalidadePagamento" class="col-sm-2">Modalidade de despesas</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control text-left" ng-model="vm.cadastro.despesa" id="despesa">
                                 </div>
@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="text-right col-sm-10">
-                                <a href="/estado" class="btn btn-default btn-lg">Cancelar</a>
+                                <a href="/gasto" class="btn btn-default btn-lg">Cancelar</a>
                                 <button ng-click="vm.salvar()" type="button" class="btn btn-success btn-lg">Salvar</button>
                             </div>
                         </form>
