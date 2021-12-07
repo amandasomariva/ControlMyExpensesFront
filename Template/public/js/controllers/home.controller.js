@@ -21,7 +21,7 @@
 
         activate();
 
-         }
+         
 
         function isAdministrador (){
             return $window.localStorage.administrador;
