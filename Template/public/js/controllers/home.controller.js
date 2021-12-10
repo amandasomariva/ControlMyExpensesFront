@@ -14,6 +14,7 @@
         vm.investimentosPage = investimentosPage;
         vm.rendasPage = rendasPage;
         vm.resumosPage = resumosPage;
+        vm.opcionaisPage = opcionaisPage;
         vm.gastosPage = gastosPage;
         vm.usuariosPage = usuariosPage;
         vm.isAdministrador = isAdministrador;

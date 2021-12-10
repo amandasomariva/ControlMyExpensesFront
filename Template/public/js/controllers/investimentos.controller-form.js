@@ -7,6 +7,7 @@
 
     InvestimentoFormController.$inject = [
         "InvestimentoService",
+        "OpcionalService",
         "$location",
         "$routeParams",
         "$scope",
@@ -14,6 +15,7 @@
 
     function InvestimentoFormController(
         InvestimentoService,
+        OpcionalService,
         $location,
         $routeParams
     ) {
@@ -47,6 +49,37 @@
     function select(valor){
         return '"'+valor+'"';
     }
+
+
+
+        function adicionarItem() {
+            vm.item = {}
+            vm.modalTitulo = 'Novo Item'
+            itemSelecionado = (vm.cadastro.opcionais && vm.cadastro.opcionais.length) || 0;
+        }
+
+        function salvarItem() {
+            OpcionalService.findById(vm.item.opcional.id).success(function(data) {
+                vm.item = data;
+                vm.cadastro.opcionais = vm.cadastro.opcionais || [];
+                vm.cadastro.opcionais[itemSelecionado] = vm.item;
+                itemSelecionado = -1;
+                vm.item = null;
+                $scope.$apply();
+            });
+        }
+
+        function editarItem(item) {
+            itemSelecionado = vm.cadastro.opcionais.indexOf(item);
+            vm.modalTitulo = 'Editando Item'
+            vm.item = angular.copy(item);
+        }
+
+        function removerItem(item) {
+            let pos = vm.cadastro.opcionais.indexOf(item);
+            vm.cadastro.opcionais.splice(pos, 1);
+            $scope.$apply();
+        }
 
     }
 })();

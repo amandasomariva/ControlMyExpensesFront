@@ -43,6 +43,15 @@ angular
             .when("/renda/:id", {
                 templateUrl: "partials/renda-form.html",
             })
+            .when("/opcional", {
+                templateUrl: "partials/opcional.html",
+            })
+            .when("/opcional/:id", {
+                templateUrl: "partials/opcional-form.html",
+            })
+            .when("/opcional/new", {
+                templateUrl: "partials/opcional-form.html",
+            })
             .when("/renda/new", {
                 templateUrl: "partials/renda-form.html",
             })
