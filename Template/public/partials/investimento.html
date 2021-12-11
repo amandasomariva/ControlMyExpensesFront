@@ -24,7 +24,6 @@
                                 <tr>
                                     <th>SALDO</th>
                                     <th>PARCELAS</th>
-                                    <th>VALOR INVESTIDO</th>
                                     <th>RENDIMENTO</th>
                                 </tr>
                             </thead>
@@ -32,7 +31,6 @@
                                 <tr ng-repeat="item in vm.itens">
                                     <td>{{item.saldo}}</td>
                                     <td>{{item.parcelas}}</td>
-                                    <td>{{item.valorInvestido}}</td>
                                     <td>{{item.rendimento}}</td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/investimento/' + item.id}}">

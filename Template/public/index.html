@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template</title>
+    <title>Controle de Gastos</title>
     <link rel="stylesheet" href="/css/vendor/bootstrap.css">
     <link rel="stylesheet" href="/css/main.css">
     <link href="/css/font-awesome.css" rel="stylesheet">
@@ -13,6 +13,8 @@
 
 <body ng-app="MyApp">
     <div ng-include src="'partials/header.html'"></div>
+    <div id="divPrincipal" style="position: absolute; margin-top: 0.7em;margin-left: 1.1em; z-index: 3; font-size: 24px;">
+    </div>
     <div ng-view></div>
 
     <div ng-include src="'partials/footer.html'"></div>
@@ -54,6 +56,14 @@
     <script src="/js/services/gastos.service.js"></script>
 
     
+<script>
+        $('#bsalert').on('close.bs.alert', toggleAlert)
+    
+        function toggleAlert() {
+            $(".alert").toggleClass('in out');
+            return false; // Keep close.bs.alert event from removing from DOM
+        }
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
