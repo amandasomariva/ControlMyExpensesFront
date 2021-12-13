@@ -31,15 +31,17 @@
                                     <input type="email" class="form-control text-left" ng-model="vm.cadastro.email" id="email">
                                 </div>
                             </div>
+
                             <div class="form-group" >
                                 <label for="sexo" class="col-sm-2">Sexo</label>
                                 <div class="col-sm-8">
-                                    <select name="sexo" class="form-control" id="sexo">
-                                        <option value="FEMININO">Feminino</option>
-                                        <option value="MASCULINO">Masculino</option>
+                                    <select name="sexo" class="form-control" id="sexo" ng-model="vm.cadastro.sexo">
+                                        <option value="FEMININO">FEMININO</option>
+                                        <option value="MASCULINO">MASCULINO</option>
                                     </select>
                                 </div>
                             </div>
+
                             <div class="text-right col-sm-10">
                                 <a href="/usuario" class="btn btn-default btn-lg">Cancelar</a>
                                 <button ng-click="vm.salvar()" type="button" class="btn btn-success btn-lg">Salvar</button>

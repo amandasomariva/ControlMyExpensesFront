@@ -37,7 +37,7 @@
 
         function salvar() {
             UsuarioService.save(vm.cadastro).success(function () {
-                $location.path("/Usuario");
+                $location.path("/usuario");
                 alert("Usuário cadastrado com sucesso!!");
             }).error(function (erro) {
                 alert(JSON.stringify(erro));
@@ -50,3 +50,4 @@
 
     }
 })();
+

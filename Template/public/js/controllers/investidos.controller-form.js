@@ -3,23 +3,23 @@
 
     angular
         .module("MyApp")
-        .controller("OpcionalFormController", OpcionalFormController);
+        .controller("InvestidoFormController", InvestidoFormController);
 
-        OpcionalFormController.$inject = [
-        "OpcionalService",
+        InvestidoFormController.$inject = [
+        "InvestidoService",
         "$location",
         "$routeParams",
         "$scope",
     ];
 
-    function OpcionalFormController(
-        OpcionalService,
+    function InvestidoFormController(
+        InvestidoService,
         $location,
         $routeParams
     ) {
         var vm = this;
         vm.cadastro = {};
-        vm.titulo = "Novo Opcional";
+        vm.titulo = "Novo Lançamento";
         vm.item = null;
         vm.salvar = salvar;
 
@@ -27,17 +27,17 @@
 
         function activate() {
             if ($routeParams.id) {
-                OpcionalService.findById($routeParams.id).success(function (data) {
+                InvestidoService.findById($routeParams.id).success(function (data) {
                     vm.cadastro = data;
-                    vm.titulo = "Editando Opcional";
+                    vm.titulo = "Editando lançamento";
                 });
             }
         }
 
         function salvar() {
-            OpcionalService.save(vm.cadastro).success(function () {
-                $location.path("/opcional");
-                alert("Opcional cadastrado com sucesso!!");
+            InvestidoService.save(vm.cadastro).success(function () {
+                $location.path("/investido");
+                alert("Lançamento cadastrado com sucesso!!");
             }).error(function (erro) {
                 alert(JSON.stringify(erro));
             });

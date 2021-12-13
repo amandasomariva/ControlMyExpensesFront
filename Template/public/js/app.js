@@ -43,14 +43,14 @@ angular
             .when("/renda/:id", {
                 templateUrl: "partials/renda-form.html",
             })
-            .when("/opcional", {
-                templateUrl: "partials/opcional.html",
+            .when("/investido", {
+                templateUrl: "partials/investido.html",
             })
-            .when("/opcional/:id", {
-                templateUrl: "partials/opcional-form.html",
+            .when("/investido/:id", {
+                templateUrl: "partials/investido-form.html",
             })
-            .when("/opcional/new", {
-                templateUrl: "partials/opcional-form.html",
+            .when("/investido/new", {
+                templateUrl: "partials/investido-form.html",
             })
             .when("/renda/new", {
                 templateUrl: "partials/renda-form.html",

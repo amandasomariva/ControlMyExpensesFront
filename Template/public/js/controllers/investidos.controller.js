@@ -3,11 +3,11 @@
 
     angular
         .module("MyApp")
-        .controller("OpcionalListController", OpcionalListController);
+        .controller("InvestidoListController", InvestidoListController);
 
-        OpcionalListController.$inject = ["OpcionalService"];
+        InvestidoListController.$inject = ["InvestidoService"];
 
-    function OpcionalListController(OpcionalService) {
+    function InvestidoListController(InvestidoService) {
         var vm = this;
 
         vm.item = null;
@@ -20,13 +20,13 @@
 
         function activate() {
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
-            OpcionalService.find(query).then(function(result) {
+            InvestidoService.find(query).then(function(result) {
                 vm.itens = result.data;
             });
         }
 
         function remover(item) {
-            OpcionalService.remove(item.id).success(function() {
+            InvestidoService.remove(item.id).success(function() {
                 activate();
             });
         }

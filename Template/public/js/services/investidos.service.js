@@ -3,11 +3,11 @@
 
     angular
         .module('MyApp')
-        .factory('OpcionalService', OpcionalService);
+        .factory('InvestidoService', InvestidoService);
 
-        OpcionalService.$inject = ['$http', '$window', '$rootScope'];
+        InvestidoService.$inject = ['$http', '$window', '$rootScope'];
 
-    function OpcionalService($http, $window, $rootScope) {
+    function InvestidoService($http, $window, $rootScope) {
         var service = {
             find: find,
             findById: findById,
@@ -15,7 +15,7 @@
             remove: remove
         };
 
-        var URL = 'http://localhost:8080/api/opcionais';
+        var URL = 'http://localhost:8080/api/investidos';
 
         return service;
 

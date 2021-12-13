@@ -29,7 +29,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
-                                    <td>{{item.saldo}}</td>
+                                    <td>{{item.saldo | currency:'R$'}}</td>
                                     <td>{{item.parcelas}}</td>
                                     <td>{{item.rendimento}}</td>
                                     <td>

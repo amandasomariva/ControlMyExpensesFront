@@ -23,21 +23,23 @@
                             <thead>
                                 <tr>
                                     <th>DESCRIÇÃO</th>
+                                    <th>VALOR</th>
                                     <th>DATA DA COMPRA</th>
                                     <th>DATA DO VENCIMENTO</th>
-                                    <th>VALOR</th>
                                     <th>MODALIDADE DE PAGAMENTO</th>
                                     <th>MODALIDADE DE DESPESAS</th>
+                                    <th>PAGO</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
-                                    <td>{{item.descricao}}</td>
-                                    <td>{{item.dataCompra}}</td>
-                                    <td>{{item.dataVencimento}}</td>
-                                    <td>{{item.valor}}</td>
-                                    <td>{{item.pagamento}}</td>
-                                    <td>{{item.despesa}}</td>
+                                    <td>{{item.descricaoCompra}}</td>
+                                    <td>{{item.valorCompra | currency:'R$'}}</td>
+                                    <td>{{item.dataCompra | date: 'dd-MM-yyyy'}}</td>
+                                    <td>{{item.dataVencimento |  date: 'dd-MM-yyyy'}}</td>
+                                    <td>{{item.tipoPagamento}}</td>
+                                    <td>{{item.tipoDespesa}}</td>
+                                    <td>{{item.pago}}</td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/gasto/' + item.id}}">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

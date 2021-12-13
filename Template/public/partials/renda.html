@@ -29,9 +29,9 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
-                                    <td>{{item.entrada}}</td>
+                                    <td>{{item.tipoRenda}}</td>
                                     <td>{{item.dataEntrada}}</td>
-                                    <td>{{item.valor}}</td>
+                                    <td>{{item.valor | currency:'R$'}}</td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/renda/' + item.id}}">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

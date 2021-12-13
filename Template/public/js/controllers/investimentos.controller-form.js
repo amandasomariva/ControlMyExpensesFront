@@ -7,7 +7,7 @@
 
     InvestimentoFormController.$inject = [
         "InvestimentoService",
-        "OpcionalService",
+        "InvestidoService",
         "$location",
         "$routeParams",
         "$scope",
@@ -15,7 +15,7 @@
 
     function InvestimentoFormController(
         InvestimentoService,
-        OpcionalService,
+        InvestidoService,
         $location,
         $routeParams
     ) {
