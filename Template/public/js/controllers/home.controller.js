@@ -9,10 +9,10 @@
         var vm = this;
         var itemSelecionado = -1;
 
-        m.investimentosPage = investimentosPage;
+        vm.investimentosPage = investimentosPage;
         vm.rendasPage = rendasPage;
         vm.resumosPage = resumosPage;
-        vm.opcionaisPage = opcionaisPage;
+        vm.investidosPage = investidosPage;
         vm.gastosPage = gastosPage;
         vm.usuariosPage = usuariosPage;
         vm.isAdministrador = isAdministrador;
@@ -44,6 +44,11 @@
 
         function gastosPage() {
             $location.path("/gasto");
+
+        }
+
+        function investidosPage() {
+            $location.path("/investido");
         }
 
         function rendasPage() {
