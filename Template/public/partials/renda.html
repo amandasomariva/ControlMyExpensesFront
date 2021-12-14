@@ -31,7 +31,7 @@
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
                                     <td>{{item.tipoRenda}}</td>
-                                    <td>{{item.dataEntrada}}</td>
+                                    <td>{{item.dataEntrada | date: 'dd-MM-yyyy'}}</td>
                                     <td>{{item.valor | currency:'R$'}}</td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/renda/' + item.id}}">

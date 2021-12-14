@@ -22,7 +22,7 @@
         vm.titulo = "Novo Usuário";
         vm.item = null;
         vm.salvar = salvar;
-        vm.select = select;
+       // vm.select = select;
 
         activate();
 

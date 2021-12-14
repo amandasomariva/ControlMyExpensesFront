@@ -115,14 +115,14 @@
         }
 
         function editarItem(item) {
-            itemSelecionado = vm.cadastro.opcionais.indexOf(item);
+            itemSelecionado = vm.cadastro.investidos.indexOf(item);
             vm.modalTitulo = 'Editando Item'
             vm.item = angular.copy(item);
         }
 
         function removerItem(item) {
-            let pos = vm.cadastro.opcionais.indexOf(item);
-            vm.cadastro.opcionais.splice(pos, 1);
+            let pos = vm.cadastro.investidos.indexOf(item);
+            vm.cadastro.investidos.splice(pos, 1);
             $scope.$apply();
         }
 

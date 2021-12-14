@@ -15,7 +15,7 @@
         vm.busca = "";
         vm.remover = remover;
         vm.buscar = activate;
-        vm.total = 0.0;
+
 
 
         activate();
@@ -24,6 +24,7 @@
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
             InvestimentoService.find(query).then(function(result) {
                 vm.itens = result.data;
+                
             });
         }
 

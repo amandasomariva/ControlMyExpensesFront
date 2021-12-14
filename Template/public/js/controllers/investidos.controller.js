@@ -24,6 +24,10 @@
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
             InvestidoService.find(query).then(function(result) {
                 vm.itens = result.data;
+                vm.total = 0.0;
+                vm.itens.forEach(function(item){
+                    vm.total += item.valorInvestido;
+                  });
             });
         }
 

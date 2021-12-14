@@ -26,7 +26,7 @@
                 vm.itens = result.data;
                 vm.total = 0.0;
                 vm.itens.forEach(function(item){
-                    vm.total += item.valor;
+                    vm.total += item.valorCompra;
                   });
             });
         }
