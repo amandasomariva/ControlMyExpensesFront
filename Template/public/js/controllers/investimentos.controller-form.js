@@ -17,7 +17,8 @@
         InvestimentoService,
         InvestidoService,
         $location,
-        $routeParams
+        $routeParams,
+        $scope
     ) {
         var vm = this;
         vm.cadastro = {};
@@ -25,6 +26,11 @@
         vm.item = null;
         vm.salvar = salvar;
         vm.select = select;
+        vm.editarItem = editarItem;
+        vm.salvarItem = salvarItem;
+        vm.removerItem = removerItem;
+        var itemSelecionado = -1;
+        vm.adicionarItem = adicionarItem;
 
         activate();
 
@@ -55,17 +61,18 @@
         function adicionarItem() {
             vm.item = {}
             vm.modalTitulo = 'Novo Item'
-            itemSelecionado = (vm.cadastro.opcionais && vm.cadastro.opcionais.length) || 0;
+            itemSelecionado = (vm.cadastro.investidos && vm.cadastro.investidos.length) || 0;
         }
 
-        function salvarItem() {
-            OpcionalService.findById(vm.item.opcional.id).success(function(data) {
+        async function salvarItem() {
+            await InvestidoService.findById(vm.item.investido.id).success(function(data) {
                 vm.item = data;
-                vm.cadastro.opcionais = vm.cadastro.opcionais || [];
-                vm.cadastro.opcionais[itemSelecionado] = vm.item;
+                vm.cadastro.investidos = vm.cadastro.investidos || [];
+                vm.cadastro.investidos[itemSelecionado] = vm.item;
                 itemSelecionado = -1;
                 vm.item = null;
-                $scope.$apply();
+               $scope.$apply();
+
             });
         }
 
