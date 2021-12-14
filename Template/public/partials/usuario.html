@@ -31,11 +31,11 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
-                                    <td>{{item.nome}}</td>
+                                    <td>{{item.nome | uppercase}}</td>
                                     <td>{{item.dataNascimento | date: 'dd-MM-yyyy'}}</td>
                                     <td>{{item.sexo}}</td>
                                     <td>{{item.cpf}}</td>
-                                    <td>{{item.email}}</td>
+                                    <td>{{item.email | uppercase}}</td>
                                     <td>
                                         <a type="button" class="btn btn-primary btn-sm" ng-href="{{'/usuario/' + item.id}}">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

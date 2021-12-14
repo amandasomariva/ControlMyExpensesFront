@@ -1,15 +1,41 @@
-var listaController = angular.module('resumoControllerApp', []);
- 
-listaController.controller('ResumoControllerCtrl', ['$scope', function($scope) {
-    var vm = this;
+(function() {
+    "use strict";
 
-    vm.atualizar = function() {
-        $scope.operacoes = [
-            {nome: 'Soma', resultado: Number(vm.primeiroNumero) + Number(vm.segundoNumero)},
-            {nome: 'Subtração', resultado: vm.primeiroNumero - vm.segundoNumero},
-            {nome: 'Multiplicação', resultado: vm.primeiroNumero * vm.segundoNumero},
-            {nome: 'Divisão', resultado: vm.primeiroNumero / vm.segundoNumero},
-            {nome: 'Percentual', resultado: (Number(vm.primeiroNumero) + Number(vm.segundoNumero)) * 0.001 }
-        ];
-      };
-}]);
+    angular
+        .module("MyApp")
+        .controller("ResumoListController", ResumoListController);
+
+    ResumoListController.$inject = ["ResumoService"];
+
+    function ResumoListController(ResumoService) {
+        var vm = this;
+
+        vm.item = null;
+        vm.itens = [];
+        vm.busca = "";
+        vm.remover = remover;
+        vm.buscar = activate;
+        vm.total = 0.0;
+
+
+        activate();
+
+        function activate() {
+            var query = vm.busca ? { $text: { $search: vm.busca } } : {};
+            ResumoService.find(query).then(function(result) {
+                vm.itens = result.data;
+                vm.total = 0.0;
+                vm.itens.forEach(function(item){
+                    vm.total += item.valor;
+                  });
+            });
+        }
+
+    
+        function remover(item) {
+            ResumoService.remove(item.id).success(function() {
+                activate();
+            });
+        }
+    }
+})();

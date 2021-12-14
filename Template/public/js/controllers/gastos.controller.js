@@ -15,6 +15,8 @@
         vm.busca = "";
         vm.remover = remover;
         vm.buscar = activate;
+        vm.total = 0.0;
+
 
         activate();
 
@@ -22,9 +24,14 @@
             var query = vm.busca ? { $text: { $search: vm.busca } } : {};
             GastoService.find(query).then(function(result) {
                 vm.itens = result.data;
+                vm.total = 0.0;
+                vm.itens.forEach(function(item){
+                    vm.total += item.valor;
+                  });
             });
         }
 
+    
         function remover(item) {
             GastoService.remove(item.id).success(function() {
                 activate();

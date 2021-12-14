@@ -29,11 +29,12 @@
                                     <th>MODALIDADE DE PAGAMENTO</th>
                                     <th>MODALIDADE DE DESPESAS</th>
                                     <th>PAGO</th>
+                                    <th>R${{vm.total}}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.itens">
-                                    <td>{{item.descricaoCompra}}</td>
+                                    <td>{{item.descricaoCompra | uppercase}}</td>
                                     <td>{{item.valorCompra | currency:'R$'}}</td>
                                     <td>{{item.dataCompra | date: 'dd-MM-yyyy'}}</td>
                                     <td>{{item.dataVencimento |  date: 'dd-MM-yyyy'}}</td>
@@ -53,6 +54,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
             </div>

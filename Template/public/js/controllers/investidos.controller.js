@@ -15,6 +15,8 @@
         vm.busca = "";
         vm.remover = remover;
         vm.buscar = activate;
+        vm.total = 0.0;
+
 
         activate();
 
